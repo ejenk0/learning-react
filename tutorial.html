@@ -4,11 +4,15 @@
     <script src="https://unpkg.com/react-dom@16.7.0/umd/react-dom.production.min.js"></script>
     <script src="https://unpkg.com/@babel/standalone@7.12.8/babel.js"></script>
     <script type="text/babel">
-        const rootElement = document.getElementById('root')
-        const className = 'container'
-        const element = <div className={className}>
-            <span>Hello</span> <strong>World</strong>
+        const Message = (props) => <div className="message">{props.msg}</div>
+        const element = (
+            <div className="container">
+                <Message msg="Hello World" />
+                <Message msg="Goodbye World" />
             </div>
-        ReactDOM.render(element, rootElement)
+        )
+        
+        ReactDOM.render(element, document.getElementById('root'))
+
     </script>
 </body>
